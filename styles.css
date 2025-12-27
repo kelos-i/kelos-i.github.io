@@ -1,0 +1,231 @@
+/* Reset e fundo preto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #000;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Grid de fundo com quadrados */
+.background-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    z-index: 0;
+    pointer-events: none; /* Permite interação com elementos acima */
+}
+
+.square {
+    border: 1px solid rgba(0, 255, 0, 0.1);
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
+
+.square:hover {
+    background: rgba(0, 255, 0, 0.5);
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+    transform: scale(1.1);
+}
+
+/* Header neon */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 20px #00ff00;
+    background: rgba(0, 255, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Grid responsivo */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Cards pretos normalmente, brancos ao hover */
+.card {
+    background: #000;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+    border: 2px solid #fff;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover, .card:active {
+    background: #fff;
+    color: #000;
+    text-shadow: none;
+    border: 2px solid #000;
+    box-shadow: 0 0 30px #00ff00, 0 0 60px #00ff00;
+    transform: scale(1.05);
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-align: center;
+    color: inherit;
+    text-shadow: inherit;
+}
+
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border: inherit;
+    box-shadow: inherit;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: inherit;
+}
+
+.commands {
+    background: inherit;
+    border: 1px solid inherit;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+code {
+    color: inherit;
+    font-size: 0.9em;
+}
+
+/* Link do bot */
+.bot-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #000;
+    color: #00ff00;
+    text-decoration: none;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #00ff00;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.bot-link:hover {
+    background: #00ff00;
+    color: #000;
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+    text-shadow: none;
+}
+
+/* Seção Sobre Mim */
+#about {
+    background: linear-gradient(45deg, #4a0e4e, #1e3a8a);
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    margin: 40px auto;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #8b5cf6, 0 0 60px #3b82f6;
+    position: relative;
+    z-index: 2;
+}
+
+.emoji {
+    font-size: 4em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px #fff, 0 0 40px #8b5cf6;
+}
+
+#about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px #fff;
+}
+
+#about p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #e0e7ff;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    .background-grid {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+
+    #about {
+        padding: 30px 15px;
+        margin: 20px auto;
+    }
+
+    .emoji {
+        font-size: 3em;
+    }
+
+    #about h2 {
+        font-size: 2em;
+    }
+}
