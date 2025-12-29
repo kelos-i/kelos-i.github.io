@@ -8,8 +8,8 @@
 body {
     font-family: 'Courier New', monospace;
     background: #000;
-    color: #00ff00;
-    text-shadow: 0 0 10px #00ff00;
+    color: #9932cc;
+    text-shadow: 0 0 10px #9932cc;
     min-height: 100vh;
     padding: 20px;
     position: relative;
@@ -18,27 +18,27 @@ body {
 
 /* Grid de fundo com quadrados */
 .background-grid {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 200vh;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-rows: repeat(20, 1fr);
     z-index: 0;
     pointer-events: none; /* Permite interação com elementos acima */
 }
 
 .square {
-    border: 1px solid rgba(0, 255, 0, 0.1);
+    border: 1px solid rgba(153, 50, 204, 0.1);
     transition: all 0.3s ease;
     pointer-events: auto;
 }
 
 .square:hover {
-    background: rgba(0, 255, 0, 0.5);
-    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+    background: rgba(153, 50, 204, 0.5);
+    box-shadow: 0 0 20px #9932cc, 0 0 40px #9932cc;
     transform: scale(1.1);
 }
 
@@ -47,9 +47,9 @@ header {
     text-align: center;
     margin-bottom: 40px;
     padding: 30px;
-    border: 2px solid #00ff00;
-    box-shadow: 0 0 20px #00ff00;
-    background: rgba(0, 255, 0, 0.1);
+    border: 2px solid #9932cc;
+    box-shadow: 0 0 20px #9932cc;
+    background: rgba(153, 50, 204, 0.1);
     position: relative;
     z-index: 2;
 }
@@ -57,7 +57,7 @@ header {
 h1 {
     font-size: 3em;
     margin-bottom: 10px;
-    text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+    text-shadow: 0 0 20px #9932cc, 0 0 40px #9932cc;
 }
 
 header p {
@@ -78,8 +78,8 @@ header p {
 /* Cards pretos normalmente, brancos ao hover */
 .card {
     background: #000;
-    color: #00ff00;
-    text-shadow: 0 0 10px #00ff00;
+    color: #9932cc;
+    text-shadow: 0 0 10px #9932cc;
     border: 2px solid #fff;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
     padding: 20px;
@@ -92,7 +92,7 @@ header p {
     color: #000;
     text-shadow: none;
     border: 2px solid #000;
-    box-shadow: 0 0 30px #00ff00, 0 0 60px #00ff00;
+    box-shadow: 0 0 30px #9932cc, 0 0 60px #9932cc;
     transform: scale(1.05);
 }
 
@@ -124,9 +124,7 @@ p {
 
 .commands {
     background: inherit;
-    border: 1px solid inherit;
-    padding: 10px;
-    margin-top: 15px;
+        border: 1px solid currentColor;
 }
 
 code {
@@ -140,19 +138,19 @@ code {
     margin-top: 15px;
     padding: 10px 20px;
     background: #000;
-    color: #00ff00;
+    color: #9932cc;
     text-decoration: none;
-    border: 2px solid #00ff00;
+    border: 2px solid #9932cc;
     border-radius: 5px;
-    box-shadow: 0 0 10px #00ff00;
+    box-shadow: 0 0 10px #9932cc;
     transition: all 0.3s ease;
-    text-shadow: 0 0 5px #00ff00;
+    text-shadow: 0 0 5px #9932cc;
 }
 
 .bot-link:hover {
-    background: #00ff00;
+    background: #9932cc;
     color: #000;
-    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+    box-shadow: 0 0 20px #9932cc, 0 0 40px #9932cc;
     text-shadow: none;
 }
 
@@ -192,19 +190,19 @@ code {
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 10px;
     }
 
     .card {
-        padding: 15px;
+        padding: 10px;
     }
 
     h1 {
-        font-size: 2.5em;
+        font-size: 2em;
     }
 
     h2 {
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
 
     body {
@@ -213,19 +211,20 @@ code {
 
     .background-grid {
         grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        height: 100vh;
     }
 
     #about {
-        padding: 30px 15px;
-        margin: 20px auto;
+        padding: 20px 10px;
+        margin: 15px auto;
     }
 
     .emoji {
-        font-size: 3em;
+        font-size: 2.5em;
     }
 
     #about h2 {
-        font-size: 2em;
+        font-size: 1.5em;
     }
 }
