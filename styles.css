@@ -92,9 +92,9 @@ header p {
 
 /* Barras laterais com imagens */
 .sidebar {
-    position: absolute;
-    width: 200px;
-    height: 100%;
+    position: static !important;
+    width: 220px;
+    min-height: calc(100vh - 408px);
     background: white;
     border: 8px solid #444;
     padding: 15px;
@@ -106,13 +106,11 @@ header p {
 }
 
 .sidebar.left {
-    left: 0;
-    top: 0;
+    grid-column: 1;
 }
 
 .sidebar.right {
-    right: 0;
-    top: 0;
+    grid-column: 3;
 }
 
 .sidebar img {
@@ -128,7 +126,7 @@ header p {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 500px;
+    width: 100%;
 }
 
 /* Cards com paleta nova */
@@ -521,15 +519,40 @@ code {
    RESPONSIVIDADE - DESKTOP (769px+)
    ============================================ */
 @media (min-width: 769px) {
-    body.desktop {
-        /* Estilos desktop padrão */
-    }
-
-    .sidebar {
-        display: flex !important;
-    }
-
-    .grid-content {
+    .grid {
+        display: grid;
+        grid-template-columns: 220px 1fr 220px; /* largura das sidebars e área principal */
         gap: 20px;
+        align-items: start;
+        min-height: calc(100vh - 408px);
+    }
+
+    /* Sidebars: posição no fluxo (não absolute), esticam verticalmente */
+    .sidebar {
+        position: static !important;
+        height: auto;
+        min-height: calc(100vh - 408px);
+        overflow-y: auto;
+        align-self: stretch;
+        background: #fff; /* mantém a barra branca */
+        border: 8px solid #444;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    /* Garante que o conteúdo central ocupe toda a área disponível */
+    .grid-content {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Ajuste das imagens nas barras para preencher a largura da sidebar */
+    .sidebar img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        border-radius: 5px;
     }
 }
