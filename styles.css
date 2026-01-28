@@ -290,17 +290,28 @@ code {
         min-height: auto;
     }
 
-    /* Show sidebars in mobile: make them horizontal scrollable */
+    /* Show sidebars in mobile as a white bar containing images (horizontal scroll) */
     .sidebar {
         display: flex !important;
-        position: static !important;
-        width: 100% !important;
+        position: relative !important;
+        width: calc(100% - 30px) !important;
         height: auto !important;
         flex-direction: row !important;
-        gap: 10px !important;
+        gap: 12px !important;
         overflow-x: auto !important;
-        padding: 10px !important;
-        background: transparent !important;
+        padding: 12px !important;
+        background: #fff !important;
+        border: 8px solid #444 !important;
+        box-sizing: border-box !important;
+        margin: 12px auto !important;
+    }
+
+    .sidebar.left,
+    .sidebar.right {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
     }
 
     .sidebar img {
@@ -425,17 +436,28 @@ code {
         min-height: auto;
     }
 
-    /* Show sidebars in tablet: horizontal scroll */
+    /* Show sidebars in tablet as a white bar containing images (horizontal scroll) */
     .sidebar {
         display: flex !important;
-        position: static !important;
-        width: 100% !important;
+        position: relative !important;
+        width: calc(100% - 30px) !important;
         height: auto !important;
         flex-direction: row !important;
         gap: 12px !important;
         overflow-x: auto !important;
         padding: 12px !important;
-        background: transparent !important;
+        background: #fff !important;
+        border: 8px solid #444 !important;
+        box-sizing: border-box !important;
+        margin: 12px auto !important;
+    }
+
+    .sidebar.left,
+    .sidebar.right {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
     }
 
     .sidebar img {
