@@ -185,6 +185,7 @@ h2 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
 }
+
 p {
     margin-bottom: 15px;
     line-height: 1.6;
@@ -289,8 +290,25 @@ code {
         min-height: auto;
     }
 
+    /* Show sidebars in mobile: make them horizontal scrollable */
     .sidebar {
-        display: none !important;
+        display: flex !important;
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        flex-direction: row !important;
+        gap: 10px !important;
+        overflow-x: auto !important;
+        padding: 10px !important;
+        background: transparent !important;
+    }
+
+    .sidebar img {
+        width: 140px !important;
+        height: auto !important;
+        flex: 0 0 auto !important;
+        border-radius: 5px !important;
+        border: 4px solid #444 !important;
     }
 
     .grid-content {
@@ -407,8 +425,25 @@ code {
         min-height: auto;
     }
 
+    /* Show sidebars in tablet: horizontal scroll */
     .sidebar {
-        display: none !important;
+        display: flex !important;
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        flex-direction: row !important;
+        gap: 12px !important;
+        overflow-x: auto !important;
+        padding: 12px !important;
+        background: transparent !important;
+    }
+
+    .sidebar img {
+        width: 160px !important;
+        height: auto !important;
+        flex: 0 0 auto !important;
+        border-radius: 5px !important;
+        border: 4px solid #444 !important;
     }
 
     .grid-content {
